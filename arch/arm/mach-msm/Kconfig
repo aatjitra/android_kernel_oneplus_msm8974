@@ -1881,8 +1881,6 @@ config MSM_CPU_FREQ_MIN
 
 endif # CPU_FREQ_MSM
 
-<<<<<<< HEAD
-=======
 config CPU_VOLTAGE_TABLE
 	bool "Enable CPU Voltage Table via sysfs for adjustements"
 	default n
@@ -1897,7 +1895,6 @@ config FORCE_FAST_CHARGE
 	  are detected as USB to charge as AC (1A/h) or to set
 	  custom charging currents for AC and USB.
 
->>>>>>> f493fec... fastcharge: backported and adapted for OnePlus One
 config MSM_AVS_HW
 	bool "Enable Adaptive Voltage Scaling (AVS)"
 	default n
