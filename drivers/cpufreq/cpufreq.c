@@ -2033,6 +2033,7 @@ int cpufreq_register_driver(struct cpufreq_driver *driver_data)
 {
 	unsigned long flags;
 	int ret;
+	struct cpufreq_frequency_table *table;
 
 	if (cpufreq_disabled())
 		return -ENODEV;
