@@ -519,6 +519,14 @@ static ssize_t store_scaling_max_freq_hardlimit(struct cpufreq_policy *policy, c
  if (ret != 1)
  return -EINVAL;
 
+ // zero is an allowed value to disable the hard limit check
+ if (input == 0)
+ {
+ max_freq_hardlimit[policy->cpu] = 0;
+ pr_debug("cpufreq : max frequency hard limit check disabled\n");
+ return count;
+ }
+
  // Get system frequency table
  table = cpufreq_frequency_get_table(0);
 
@@ -557,7 +565,9 @@ static ssize_t store_scaling_max_freq(struct cpufreq_policy *policy, const char 
  if (ret != 1)
  return -EINVAL;
 
- // if new max frequency is above hard limit, overwrite with hard limit
+ // if hard limit check is enabled + if new max frequency is above hard limit,
+ // overwrite with hard limit
+ if (max_freq_hardlimit[policy->cpu] != 0)
  if (new_policy.max > max_freq_hardlimit[policy->cpu])
  new_policy.max = max_freq_hardlimit[policy->cpu];
 
