@@ -16,13 +16,9 @@ obj-$(CONFIG_IOSCHED_NOOP)	+= noop-iosched.o
 obj-$(CONFIG_IOSCHED_DEADLINE)	+= deadline-iosched.o
 obj-$(CONFIG_IOSCHED_ROW)	+= row-iosched.o
 obj-$(CONFIG_IOSCHED_CFQ)	+= cfq-iosched.o
-<<<<<<< HEAD
 # obj-$(CONFIG_IOSCHED_TEST)	+= test-iosched.o
 obj-$(CONFIG_IOSCHED_FIOPS)	+= fiops-iosched.o
 obj-$(CONFIG_IOSCHED_SIO)       += sio-iosched.o
-=======
-obj-$(CONFIG_IOSCHED_TEST)	+= test-iosched.o
->>>>>>> aa3b909... block: cgroups, kconfig, build bits for BFQ-v6r2 for 3.4
 obj-$(CONFIG_IOSCHED_BFQ)	+= bfq-iosched.o
 
 obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
