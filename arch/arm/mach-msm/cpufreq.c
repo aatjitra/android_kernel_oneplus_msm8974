@@ -199,10 +199,10 @@ static int msm_cpufreq_init(struct cpufreq_policy *policy)
 	/* Use user max frequency instead of max available frequency */
 	pr_debug("cpufreq: cpu%d init at %d switching to %d\n",
 #ifdef CONFIG_MSM_CPU_FREQ_SET_MIN_MAX
-			policy->cpu, cur_freq, policy->max);
+	policy->cpu, cur_freq, policy->max);
 	policy->cur = policy->max;
 #else
-			policy->cpu, cur_freq, table[index].frequency);
+	policy->cpu, cur_freq, table[index].frequency);
 	policy->cur = table[index].frequency;
 #endif
 	cpufreq_frequency_table_get_attr(table, policy->cpu);
